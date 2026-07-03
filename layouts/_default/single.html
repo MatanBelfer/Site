@@ -1,6 +1,6 @@
 {{ define "main" }}
 <article class="project">
-  <p class="eyebrow mono">Project · {{ .Date.Format "2006" }}</p>
+  <p class="eyebrow mono">Project{{ if not .Date.IsZero }} · {{ .Date.Format "2006" }}{{ end }}</p>
   <h1>{{ .Title }}</h1>
 
   <dl class="meta mono">

@@ -5,11 +5,13 @@
   <div class="prose">{{ .Content }}</div>
 
   <ul class="leaders projects">
-    {{ range .Pages.ByDate.Reverse }}
+    {{ range .Pages }}
     <li>
       <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{ if not .Date.IsZero }}
       <span class="dots" aria-hidden="true"></span>
       <span class="mono handle">{{ .Date.Format "2006" }}</span>
+      {{ end }}
     </li>
     {{ end }}
   </ul>

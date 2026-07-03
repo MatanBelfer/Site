@@ -33,11 +33,13 @@
 <section class="index-section" aria-labelledby="proj-h">
   <h2 id="proj-h" class="eyebrow mono">Selected projects</h2>
   <ul class="leaders projects">
-    {{ range (where site.RegularPages "Section" "projects").ByDate.Reverse }}
+    {{ range where site.RegularPages "Section" "projects" }}
     <li>
       <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{ if not .Date.IsZero }}
       <span class="dots" aria-hidden="true"></span>
       <span class="mono handle">{{ .Date.Format "2006" }}</span>
+      {{ end }}
     </li>
     {{ end }}
   </ul>

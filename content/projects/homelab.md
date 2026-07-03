@@ -1,5 +1,6 @@
 ---
 title: "Home lab — network & server infrastructure"
+date: 2025-06-01
 tech: ["Linux", "Firewall/router", "Virtualization", "Local LLMs"]
 description: "An enterprise-style home datacenter: firewall appliance, router, and a multi-node server cluster."
 ---
