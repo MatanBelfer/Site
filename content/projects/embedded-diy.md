@@ -1,6 +1,6 @@
 ---
+weight: 4
 title: "Embedded & DIY engineering"
-date: 2022-06-01
 tech: ["Embedded Linux", "Soldering", "Reverse engineering"]
 description: "Firmware-level modification of everyday devices — including a soldering iron running Linux."
 ---
