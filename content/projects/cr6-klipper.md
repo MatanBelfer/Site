@@ -1,6 +1,5 @@
 ---
 title: "Creality CR-6 → Klipper conversion"
-date: 2023-09-01
 tech: ["Klipper", "G-code macros", "Firmware"]
 description: "Replaced stock firmware on a CR-6 with Klipper, adapted to non-standard hardware."
 ---

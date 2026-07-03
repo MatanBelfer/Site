@@ -1,6 +1,5 @@
 ---
 title: "Voron Trident — self-sourced CoreXY build"
-date: 2024-06-01
 tech: ["CoreXY kinematics", "Klipper", "Electronics", "Wiring"]
 description: "A Voron Trident 3D printer built entirely from individual components — no kit shortcuts."
 ---
