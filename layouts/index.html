@@ -1,0 +1,46 @@
+{{ define "main" }}
+<section class="hero">
+  <p class="eyebrow mono">{{ site.Params.role }}</p>
+  <h1 class="thesis">{{ site.Params.thesis }}</h1>
+  <div class="prose intro">{{ .Content }}</div>
+</section>
+
+<section class="index-section" aria-labelledby="links-h">
+  <h2 id="links-h" class="eyebrow mono">Index — where to find me</h2>
+  <ul class="leaders">
+    {{ range site.Params.links }}
+    <li>
+      <a href="{{ .url }}" {{ if not (hasPrefix .url "mailto:") }}rel="me noopener" target="_blank"{{ end }}>{{ .name }}</a>
+      <span class="dots" aria-hidden="true"></span>
+      <span class="mono handle">{{ .handle }}</span>
+    </li>
+    {{ end }}
+  </ul>
+</section>
+
+<section class="index-section" aria-labelledby="skills-h">
+  <h2 id="skills-h" class="eyebrow mono">Capabilities</h2>
+  <dl class="skills">
+    {{ range site.Params.skills }}
+    <div class="skill-row">
+      <dt class="mono">{{ .area }}</dt>
+      <dd>{{ .items }}</dd>
+    </div>
+    {{ end }}
+  </dl>
+</section>
+
+<section class="index-section" aria-labelledby="proj-h">
+  <h2 id="proj-h" class="eyebrow mono">Selected projects</h2>
+  <ul class="leaders projects">
+    {{ range (where site.RegularPages "Section" "projects").ByDate.Reverse }}
+    <li>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <span class="dots" aria-hidden="true"></span>
+      <span class="mono handle">{{ .Date.Format "2006" }}</span>
+    </li>
+    {{ end }}
+  </ul>
+  <p class="see-all"><a href="/projects/">All projects →</a></p>
+</section>
+{{ end }}

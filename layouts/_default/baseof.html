@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if not .IsHome }}{{ .Title }} · {{ end }}{{ site.Title }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.thesis }}{{ end }}">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  {{ with resources.Get "css/main.css" }}
+    {{ $css := . | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  {{ end }}
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="{{ site.BaseURL }}">{{ site.Params.author }}</a>
+    <nav aria-label="Main">
+      {{ range site.Menus.main }}
+        <a href="{{ .URL }}">{{ .Name }}</a>
+      {{ end }}
+    </nav>
+  </header>
+
+  <main id="main">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer class="site-footer">
+    <span class="mono">© {{ now.Format "2006" }} {{ site.Params.author }}</span>
+    <span class="mono">Built with Hugo · No trackers, no cookies</span>
+  </footer>
+</body>
+</html>

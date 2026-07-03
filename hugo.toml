@@ -1,0 +1,45 @@
+baseURL = "https://xaipen.net/"
+languageCode = "en"
+title = "Matan Belfer"
+
+disableKinds = ["taxonomy", "term", "rss"]
+enableRobotsTXT = true
+
+[params]
+  author = "Matan Belfer"
+  role = "Systems developer & hardware builder"
+  thesis = "I build machines and the software that drives them — motion systems, custom firmware, and the infrastructure they run on."
+  email = "belfer.matan@gmail.com"
+
+  # Links index — add GitHub/LinkedIn/etc. as you like.
+  [[params.links]]
+    name = "GitHub"
+    handle = "@MatanBelfer"
+    url = "https://github.com/MatanBelfer"
+  [[params.links]]
+    name = "Email"
+    handle = "belfer.matan@gmail.com"
+    url = "mailto:belfer.matan@gmail.com"
+
+  # Skills — rendered as the capabilities section on the homepage.
+  [[params.skills]]
+    area = "Motion & firmware"
+    items = "Klipper (custom builds & configs), Marlin-class replacement, G-code macros, kinematics tuning, stepper drivers"
+  [[params.skills]]
+    area = "Programming"
+    items = "C, C#, Python, G-code, Unity game development, local LLM inference & deployment"
+  [[params.skills]]
+    area = "Hardware & electronics"
+    items = "Soldering (through-hole & rework), machine repair & modification, FDM 3D printing, embedded Linux devices"
+  [[params.skills]]
+    area = "Systems & networking"
+    items = "Linux administration, multi-node clusters, firewall/router appliances, virtualization"
+
+[menus]
+  [[menus.main]]
+    name = "Projects"
+    pageRef = "/projects"
+    weight = 10
+
+[markup.goldmark.renderer]
+  unsafe = false

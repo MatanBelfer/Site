@@ -1,0 +1,17 @@
+{{ define "main" }}
+<section class="index-section">
+  <p class="eyebrow mono">{{ .Title }}</p>
+  <h1>{{ with .Params.tagline }}{{ . }}{{ else }}{{ .Title }}{{ end }}</h1>
+  <div class="prose">{{ .Content }}</div>
+
+  <ul class="leaders projects">
+    {{ range .Pages.ByDate.Reverse }}
+    <li>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <span class="dots" aria-hidden="true"></span>
+      <span class="mono handle">{{ .Date.Format "2006" }}</span>
+    </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}

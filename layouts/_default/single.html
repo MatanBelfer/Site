@@ -1,0 +1,22 @@
+{{ define "main" }}
+<article class="project">
+  <p class="eyebrow mono">Project · {{ .Date.Format "2006" }}</p>
+  <h1>{{ .Title }}</h1>
+
+  <dl class="meta mono">
+    {{ with .Params.tech }}
+      <dt>Stack</dt><dd>{{ delimit . " · " }}</dd>
+    {{ end }}
+    {{ with .Params.repo }}
+      <dt>Source</dt><dd><a href="{{ . }}" rel="noopener" target="_blank">{{ . }}</a></dd>
+    {{ end }}
+    {{ with .Params.live }}
+      <dt>Live</dt><dd><a href="{{ . }}" rel="noopener" target="_blank">{{ . }}</a></dd>
+    {{ end }}
+  </dl>
+
+  <div class="prose">{{ .Content }}</div>
+
+  <p class="back"><a href="/projects/">← All projects</a></p>
+</article>
+{{ end }}

@@ -1,0 +1,4 @@
+# Hugo build output — CI builds this, never commit it
+public/
+resources/_gen/
+.hugo_build.lock
